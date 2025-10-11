@@ -2,7 +2,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-
 @theme {
   --font-sans:
     'Mona Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
