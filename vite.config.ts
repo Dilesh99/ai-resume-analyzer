@@ -5,4 +5,10 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  optimizeDeps: {
+    exclude: [
+      'pdfjs-dist/build/pdf.mjs',
+      // Add other problematic dependencies here if needed
+    ],
+  },
 });
