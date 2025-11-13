@@ -3,6 +3,7 @@ export interface PdfConversionResult {
   file: File | null;
   error?: string;
 }
+// Lazy load pdfjs library
 
 let pdfjsLib: any = null;
 let isLoading = false;
