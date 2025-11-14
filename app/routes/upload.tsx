@@ -1,4 +1,4 @@
-import { type FormEvent, useState } from 'react';
+import { type FormEvent, useEffect, useState } from 'react';
 import Navbar from '~/components/Navbar';
 import FileUploader from '~/components/FileUploader';
 import { usePuterStore } from '~/lib/puter';
@@ -94,6 +94,10 @@ const Upload = () => {
 
     handleAnalyze({ companyName, jobTitle, jobDescription, file });
   };
+
+  useEffect(() => {
+    if (!auth.isAuthenticated) navigate('/auth?next=/');
+  }, [auth.isAuthenticated]);
 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
