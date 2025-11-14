@@ -103,10 +103,20 @@ const Upload = () => {
         <div className="page-heading py-16">
           <h1>Smart feedback for your dream job</h1>
           {isProcessing ? (
-            <>
-              <h2>{statusText}</h2>
-              <img src="/images/resume-scan.gif" className="w-full" />
-            </>
+            <div className="fixed inset-0 bg-white bg-opacity-95 flex flex-col items-center justify-center z-50">
+              <div className="flex flex-col items-center gap-6 max-w-md mx-auto text-center">
+                <h2 className="text-2xl font-semibold text-gray-800">
+                  {statusText}
+                </h2>
+                <img src="/images/resume-scan.gif" className="w-64 h-auto" />
+                <div className="flex items-center gap-2 text-gray-600">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                  <span className="text-sm">
+                    Please wait while we process your resume...
+                  </span>
+                </div>
+              </div>
+            </div>
           ) : (
             <h2>Drop your resume for an ATS score and improvement tips</h2>
           )}

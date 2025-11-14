@@ -58,17 +58,11 @@ export default function Home() {
           </div>
         )}
 
-        {!loadingResume && resume?.length > 0 ? (
+        {!loadingResume && resume?.length > 0 && (
           <div className="resumes-section">
             {resume.map(resume => (
               <ResumeCard key={resume.id} resume={resume} />
             ))}
-          </div>
-        ) : (
-          <div className="text-center py-8">
-            <p className="text-gray-600 dark:text-gray-300">
-              No resumes found. Upload your first resume to get started!
-            </p>
           </div>
         )}
       </section>
